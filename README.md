@@ -29,22 +29,10 @@ Tauri plugins that are enabled by default:
 * clipboard
 * dialog - open folders / files, messages
 
-## Icons
-
-A selection of icon svg:s from [hero icons](https://heroicons.com/) is included.
-Import in script:
-```
-import Icon from "./Icon.svelte";
-import { IconType } from "../globals.svelte.js";
-```
-Usage in html:
-```
-<Icon type={IconType.Sparkles}/> 
-```
-... with optional params:
-```
-<Icon type={IconType.Heart} offset="-4" size="32"/> 
-```
 ## Settings
 
-A settings page is included. By default it stores the users choice of accent color.
+A settings page is included. By default it stores the users choice of accent color and a default file folder for pickers.
+
+## Components
+
+Go to *about > usage examples* to get an overview of included components and elements, and how to use them.
