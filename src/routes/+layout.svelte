@@ -1,7 +1,7 @@
 <script>
 	let { children } = $props();
 	import Header from "../components/Header.svelte";
-	import { uiMode, AccentColor, accentColor } from "../globals.svelte";
+	import { uiMode, getAccentColorAsString} from "../globals.svelte";
 	import Footer from "../components/Footer.svelte";
 	import "../app.css"
 
@@ -9,8 +9,9 @@
 	let main;
 
 	$effect(() => {
+		let color = getAccentColorAsString();
 		let darkMode = uiMode.isDarkMode ? "dark" : "";
-		main.className = darkMode;
+		main.className = color + " " + darkMode
 	});
 </script>
 

@@ -47,5 +47,24 @@ export enum AccentColor {
 	Indigo
 }
 export const accentColor = $state({ color: AccentColor.Violet })
+export function getAccentColorAsString(): string {
+	switch(accentColor.color)
+	{
+		case AccentColor.Violet:
+			return "violet";
+		case AccentColor.Fuchsia:
+			return "fuchsia";
+		case AccentColor.Rose:
+			return "rose";
+		case AccentColor.Amber:
+			return "amber";
+		case AccentColor.Green:
+			return "green";
+		case AccentColor.Sky:
+			return "sky";
+		case AccentColor.Indigo:
+			return "indigo";
+	}
+}
 
 

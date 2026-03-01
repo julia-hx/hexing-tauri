@@ -1,5 +1,21 @@
-@import "tailwindcss";
+@import "tailwindcss"; 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@custom-variant violet (&:where(.violet, .violet *));
+@custom-variant fuchsia (&:where(.fuchsia, .fuchsia *));
+@custom-variant rose (&:where(.rose, .rose *));
+@custom-variant amber (&:where(.amber, .amber *));
+@custom-variant green (&:where(.green, .green *));
+@custom-variant sky (&:where(.sky, .sky *));
+@custom-variant indigo (&:where(.indigo, .indigo *));
+
+@layer base {
+	:root {
+		--color-accent: theme(--color-violet-500);
+		--color-accent-heavy: theme(--color-violet-600);
+		--color-accent-light: theme(--color-violet-300);
+	}
+}
 
 :root{
 	font-family: theme(--font-mono);
@@ -14,7 +30,46 @@
 	-webkit-text-size-adjust: 100%;
 }
 
-@theme {
+.violet {
+	--color-accent: theme(--color-violet-500);
+	--color-accent-heavy: theme(--color-violet-600);
+	--color-accent-light: theme(--color-violet-300);
+}
+
+.fuchsia {
+	--color-accent: theme(--color-fuchsia-500);
+	--color-accent-heavy: theme(--color-fuchsia-600);
+	--color-accent-light: theme(--color-fuchsia-300);
+}
+
+.rose {
+	--color-accent: theme(--color-rose-500);
+	--color-accent-heavy: theme(--color-rose-600);
+	--color-accent-light: theme(--color-rose-300);
+}
+
+.amber {
+	--color-accent: theme(--color-amber-500);
+	--color-accent-heavy: theme(--color-amber-600);
+	--color-accent-light: theme(--color-amber-300);
+}
+
+.green {
+	--color-accent: theme(--color-green-500);
+	--color-accent-heavy: theme(--color-green-600);
+	--color-accent-light: theme(--color-green-300);
+}
+
+.sky {
+	--color-accent: theme(--color-sky-500);
+	--color-accent-heavy: theme(--color-sky-600);
+	--color-accent-light: theme(--color-sky-300);
+}
+
+.indigo {
+	--color-accent: theme(--color-indigo-500);
+	--color-accent-heavy: theme(--color-indigo-600);
+	--color-accent-light: theme(--color-indigo-300);
 }
 
 textarea, input, button, a { outline: 0px; }
@@ -26,10 +81,10 @@ button, input {
 	padding-right: 8px;
 }
 button {
-	background-color: theme(--color-violet-500);
+	background-color: var(--color-accent);
 }
 button:hover {
-	background-color: theme(--color-violet-600);
+	background-color: var(--color-accent-heavy);
 	cursor: pointer;
 }
 
@@ -40,11 +95,11 @@ input {
 *:focus-visible{
 	outline:2px;
 	outline-style: solid;
-	outline-color: theme(--color-violet-300);
+	outline-color: var(--color-accent-light);
 }
 
 a {
-	color: theme(--color-violet-500);
+	color: var(--color-accent);
 }
 a:hover {
 	text-decoration: underline;
