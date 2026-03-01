@@ -14,6 +14,9 @@
 	-webkit-text-size-adjust: 100%;
 }
 
+@theme {
+}
+
 textarea, input, button, a { outline: 0px; }
 button, input {
 	border-radius: 8px;

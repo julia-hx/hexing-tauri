@@ -1,19 +1,16 @@
 <script>
 	let { children } = $props();
 	import Header from "../components/Header.svelte";
-	import { uiMode } from "../globals.svelte";
+	import { uiMode, AccentColor, accentColor } from "../globals.svelte";
 	import Footer from "../components/Footer.svelte";
 	import "../app.css"
 
 	/** @type {HTMLElement} */
 	let main;
 
-	$effect(() => {	
-		if(uiMode.isDarkMode) {
-			main.className = "dark";
-		} else {
-			main.className = "";
-		}
+	$effect(() => {
+		let darkMode = uiMode.isDarkMode ? "dark" : "";
+		main.className = darkMode;
 	});
 </script>
 

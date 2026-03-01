@@ -36,3 +36,16 @@ export enum IconType {
 	Trash,
 	Fire,
 }
+
+export enum AccentColor {
+	Violet,
+	Fuchsia,
+	Rose,
+	Amber,
+	Green,
+	Sky,
+	Indigo
+}
+export const accentColor = $state({ color: AccentColor.Violet })
+
+

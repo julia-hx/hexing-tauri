@@ -21,6 +21,13 @@ You can also set the text and background colors for light vs dark mode in /src/+
 
 From there, you can extend this template to your hearts desire!
 
+## Tauri Plugins
+
+Tauri plugins that are enabled by default:
+* store - persistent key-value storage
+* os information
+* clipboard
+* dialog - open folders / files, messages
 
 ## Icons
 
@@ -43,5 +50,3 @@ Usage in html:
 A settings page is included.
 
 By default, user can set an accent color for the app.
-
-
