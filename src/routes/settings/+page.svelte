@@ -14,17 +14,15 @@
 		User configuration for this app.
 	</p>
 
-	<div class="text-lg font-sans flex flex-row">
-		accent color
+	<div class="flex flex-col space-y-2 justify-center items-center">
+		<div class="flex flex-row">
+			<AccentColorPicker/>
+			<span class="label">accent color</span>
+		</div>
+
+		<FolderPicker label="default path" pathState={defaultFilePath} onPathStateChanged={() => {
+			_storeDefaultFilepath(defaultFilePath.path);
+		}}/>
 	</div>
-
-	<AccentColorPicker/>
-
-	<div class="text-lg font-sans flex flex-row mt-2">
-		default file path
-	</div>
-
-	<FolderPicker pathState={defaultFilePath} onPathStateChanged={() => {
-		_storeDefaultFilepath(defaultFilePath.path);
-	}}/>
+	
 </div>

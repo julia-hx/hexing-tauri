@@ -9,7 +9,7 @@
 	}
 </script>
 
-<div class="flex flex-row items-center space-x-2 mt-2">
+<div class="flex flex-row items-center space-x-2">
 	<button
 		class="accent-color-btn size-6 violet"
 		title="violet"

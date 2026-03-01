@@ -2,7 +2,10 @@
 	import Icon from "../../components/Icon.svelte";
 	import { IconType } from "../../globals.svelte";
 	import AccentColorPicker from "../../components/AccentColorPicker.svelte";
+	import FolderPicker from "../../components/FolderPicker.svelte";
 	import FileDialog from "../../components/FileDialog.svelte";
+
+	let exampleFolderPath = $state({path: "-none-"});
 </script>
 
 <div class="flex justify-center items-center flex-col space-y-0">
@@ -54,12 +57,26 @@
 	</div>
 
 	<div class="text-xl font-sans mt-6">
-		file dialog
+		pickers
 	</div>
+
 	<div class="mt-2 flex flex-col items-center">
-		<p>Use the FileDialog component to get paths to folders and files on the system:</p>
+		<p>FolderPicker component to get a single folder path from the system:</p>
+		<div class="mt-2s">
+			<FolderPicker 
+				label="folder picker" 
+				pathState={exampleFolderPath} 
+				onPathStateChanged={() => {
+					console.log("example folder picker path set.")
+				}}
+			/>
+		</div>
+	</div>
+
+	<div class="mt-2 flex flex-col items-center">
+		<p>FileDialog component gets paths to files or folder contents on the system:</p>
 		<div class="mt-2">
-			<FileDialog/>
+			<FileDialog label="file dialog"/>
 		</div>
 	</div>
 </div>

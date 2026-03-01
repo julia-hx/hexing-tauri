@@ -3,8 +3,6 @@
 	import { IconType } from '../globals.svelte';
 	import { open } from '@tauri-apps/plugin-dialog';
 	import { defaultFilePath } from '../globals.svelte';
-	import { LazyStore } from '@tauri-apps/plugin-store';
-    import { on } from 'svelte/events';
 
 	class OpenFolderOptions {
 		constructor() {
@@ -15,8 +13,8 @@
 		}
 	}
 
-	// expect a $state({path: "..."}) state object
-	let { pathState, onPathStateChanged } = $props();
+	// $state({path: "..."}) state object, event, label
+	let { pathState, onPathStateChanged, label } = $props();
 
 	async function selectFolder() {
 		let result = open(new OpenFolderOptions()).then((value) => {
@@ -32,14 +30,17 @@
 	}
 </script>
 
-<div class="flex justify-center items-center flex-col text-sm">
-	<div class="flex flex-row items-center mt-2">
+<div class="flex justify-center items-center flex-col">
+	<div class="flex flex-row items-center">
 		<IconButton iconType={IconType.Folder} onClick={selectFolder}/>
+		<IconButton iconType={IconType.Trash} onClick={resetFolder}/>
 		
-		<div class="display ml-1 h-7 min-w-24 max-w-104 truncate">
-			{pathState.path}
+		<div class="truncate ml-1 pt-1 pl-2 pr-2 h-7 min-w-10 max-w-120 rounded-lg bg-gray-100 dark:bg-gray-900 text-gray-400">
+			<span>{pathState.path}</span>
 		</div>
 		
-		<IconButton iconType={IconType.Trash} onClick={resetFolder}/>
+		<div class="label">
+			<span>{label}</span>
+		</div>
 	</div>
 </div>

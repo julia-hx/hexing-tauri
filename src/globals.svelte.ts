@@ -1,5 +1,15 @@
 export const uiMode = $state({ isDarkMode: true });
 
+export class FilePath {
+	value:string;
+	displayName:string;
+	
+	constructor() {
+		this.value = "";
+		this.displayName = "";
+	}
+}
+
 export enum IconType {
 	Document,
 	Folder,
