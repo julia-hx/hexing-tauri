@@ -105,14 +105,14 @@
 	</div>
 </div>
 
-<div class="w-84 h-36 rounded-lg bg-gray-100 dark:bg-gray-900 text-gray-400 dropzone mt-2">
+<div class="min-w-64 max-w-120 min-h-16 max-h-36 mt-2 rounded-lg bg-gray-100 dark:bg-gray-900 text-gray-400">
 	<ul class="h-35 overflow-auto p-2 mt-2" bind:this={scroller}>
 		{#each paths as path}
 			<li class="m-0 p-0">{path.displayName}</li>
 		{/each}
 	</ul>
 	
-	<div class="flex flex-row pt-16 justify-center" bind:this={placeholder}>
+	<div class="flex flex-row mt-5 justify-center" bind:this={placeholder}>
 		<span >-no files yet-</span>
 	</div>
 </div>

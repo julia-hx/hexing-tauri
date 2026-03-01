@@ -5,7 +5,7 @@
 	import FileLoader from "../../components/FileLoader.svelte";
 </script>
 
-<div class="flex justify-center items-center flex-col">
+<div class="flex justify-center items-center flex-col space-y-0">
 	<span class="text-3xl font-sans">
 		examples
 	</span>
@@ -13,7 +13,7 @@
 	<p class="mt-2">Examples of hexing-tauri template components and functionality.</p>
 	<p>Implementation reference: ./src/routes/examples/+page.svelte.</p>
 
-	<div class="text-2xl font-sans mt-4">
+	<div class="text-2xl font-sans mt-6">
 		icons
 	</div>
 	<div class="mt-2 flex flex-col justify-center items-center">
@@ -27,7 +27,7 @@
 		</div>
 	</div>
 
-	<div class="text-2xl font-sans mt-4">
+	<div class="text-2xl font-sans mt-6">
 		accent color
 	</div>
 	<div class="mt-2 flex flex-col justify-center items-center">
@@ -53,7 +53,7 @@
 		</div>
 	</div>
 
-	<div class="text-2xl font-sans mt-4">
+	<div class="text-2xl font-sans mt-6">
 		file loader
 	</div>
 	<div class="mt-2 flex flex-col justify-center items-center">
