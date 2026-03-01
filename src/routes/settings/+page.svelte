@@ -1,11 +1,6 @@
 <script lang="ts">
-	import type { PageProps } from './$types';
-	import { LazyStore } from '@tauri-apps/plugin-store';
-	import { AccentColor, accentColor } from '../../globals.svelte';
-
-	async function setAccentColor(color : AccentColor) {
-		accentColor.color = color;
-	}
+	import { AccentColor } from '../../globals.svelte';
+	import { _setAccentColor } from './+page';
 </script>
 
 <div class="flex justify-center items-center flex-col">
@@ -25,37 +20,37 @@
 		<button 
 			class="accent-color-btn size-6 violet" 
 			title="violet" 
-			onclick={() => { setAccentColor(AccentColor.Violet); }}>
+			onclick={() => { _setAccentColor(AccentColor.Violet); }}>
 		</button>
-		<button 
+		<button
 			class="accent-color-btn size-6 fuchsia" 
 			title="fuchsia" 
-			onclick={() => { setAccentColor(AccentColor.Fuchsia); }}>
+			onclick={() => { _setAccentColor(AccentColor.Fuchsia); }}>
 		</button>
 		<button 
 			class="accent-color-btn size-6 rose" 
 			title="rose" 
-			onclick={() => { setAccentColor(AccentColor.Rose); }}>
+			onclick={() => { _setAccentColor(AccentColor.Rose); }}>
 		</button>
 		<button 
 			class="accent-color-btn size-6 amber" 
 			title="amber" 
-			onclick={() => { setAccentColor(AccentColor.Amber); }}>
+			onclick={() => { _setAccentColor(AccentColor.Amber); }}>
 		</button>
 		<button 
 			class="accent-color-btn size-6 green" 
 			title="green" 
-			onclick={() => { setAccentColor(AccentColor.Green); }}>
+			onclick={() => { _setAccentColor(AccentColor.Green); }}>
 		</button>
 		<button 
 			class="accent-color-btn size-6 sky" 
 			title="sky" 
-			onclick={() => { setAccentColor(AccentColor.Sky); }}>
+			onclick={() => { _setAccentColor(AccentColor.Sky); }}>
 		</button>
 		<button 
 			class="accent-color-btn size-6 indigo" 
 			title="indigo" 
-			onclick={() => { setAccentColor(AccentColor.Indigo); }}>
+			onclick={() => { _setAccentColor(AccentColor.Indigo); }}>
 		</button>
 	</div>
 </div>
@@ -66,27 +61,6 @@
 
 	.accent-color-btn {
 		border-radius: 20px;
-	}
-	.violet {
-		background-color: theme(--color-violet-500);
-	}
-	.fuchsia {
-		background-color: theme(--color-fuchsia-500);
-	}
-	.rose {
-		background-color: theme(--color-rose-500);
-	}
-	.amber {
-		background-color: theme(--color-amber-500);
-	}
-	.green {
-		background-color: theme(--color-green-500);
-	}
-	.sky {
-		background-color: theme(--color-sky-500);
-	}
-	.indigo {
-		background-color: theme(--color-indigo-500);
 	}
 	.accent-color-btn:hover {
 		outline: solid;

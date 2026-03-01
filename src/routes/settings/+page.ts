@@ -1,8 +1,17 @@
-import type { PageLoad } from './$types';
+import { setAccentColorByString, getAccentColorAsString, accentColor, AccentColor } from '../../globals.svelte';
 import { LazyStore } from '@tauri-apps/plugin-store';
 
-export const load: PageLoad = ({ params }) => {
+export async function _initSettings() {
 	console.log("...loading settings...");
-	let store = new LazyStore('settings.json')
-	
+	let store = new LazyStore('settings.json');
+	store.get("accentColor").then((value) => {
+		let stringValue = value as string;
+		setAccentColorByString(stringValue);
+	});
 };
+
+export async function _setAccentColor(color : AccentColor) {
+	accentColor.color = color;
+	let store = new LazyStore('settings.json');
+	store.set("accentColor", getAccentColorAsString());
+}

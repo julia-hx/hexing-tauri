@@ -66,5 +66,33 @@ export function getAccentColorAsString(): string {
 			return "indigo";
 	}
 }
+export function setAccentColorByString(colorString: string) {
+	switch(colorString)
+	{
+		case "violet":
+			accentColor.color = AccentColor.Violet;
+			break;
+		case "fuchsia":
+			accentColor.color = AccentColor.Fuchsia;
+			break;
+		case "rose":
+			accentColor.color = AccentColor.Rose;
+			break;
+		case "amber":
+			accentColor.color = AccentColor.Amber;
+			break;
+		case "green":
+			accentColor.color = AccentColor.Green;
+			break;
+		case "sky":
+			accentColor.color = AccentColor.Sky;
+			break;
+		case "indigo":
+			accentColor.color = AccentColor.Indigo;
+			break;
+		default:
+			accentColor.color = AccentColor.Violet;
+	}
+}
 
 

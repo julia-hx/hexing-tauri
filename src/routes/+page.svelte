@@ -1,7 +1,10 @@
-<script>
+<script lang="ts">
 	import { invoke } from "@tauri-apps/api/core";
 	import Icon from "../components/Icon.svelte";
 	import { IconType } from "../globals.svelte";
+	import { _initSettings } from "./settings/+page";
+
+	
 
 	let message = $state("Hello world!");
 
@@ -26,3 +29,7 @@
 		<button type="submit">Print</button>
 	</form>
 </div>
+
+<style>
+	@custom-variant dark (&:where(.dark, .dark *));
+</style>
