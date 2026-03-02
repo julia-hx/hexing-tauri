@@ -1,9 +1,10 @@
 <script lang="ts">
 	import IconButton from "./IconButton.svelte";
-	import { IconType, OptionConfig, optionDialogState } from "../globals.svelte";
+	import { IconType, OptionConfig, OptionDialogState, optionDialogState } from "../globals.svelte";
 
 	// $state({value: "..."}) state object, event, options string array, label
 	let {
+		id = "OptionsDialog",
 		optionState,
 		onOptionStateChanged,
 		label = "Options",
@@ -13,24 +14,25 @@
 
 	let optionsContainer: HTMLElement;
 
-	async function selectOption(value = "-none-") {
+	function selectOption(value = "-none-") {
 		optionState.value = value;
 		onOptionStateChanged();
-		optionsContainer.hidden = true;
+		close();
 	}
 
-	async function showOptions() {
-		if(optionDialogState.isActive) {
+	function showOptions() {
+		if(optionDialogState.activeDialogId != id)
+		{
 			optionDialogState.closeActiveDialog();
 		}
-		optionDialogState.isActive = true;
+		optionDialogState.activeDialogId = id;
 		optionDialogState.closeActiveDialog = () => { close(); }
 		optionsContainer.hidden = false;
 	}
 
 	function close() {
 		optionsContainer.hidden = true;
-		optionDialogState.isActive = false;
+		optionDialogState.closeActiveDialog = () => {};
 	}
 </script>
 
@@ -46,6 +48,11 @@
 							<span>{label}</span>
 						</li>
 					{/if}
+
+					<div class="closeButton">
+						<IconButton iconType={IconType.XMark} onClick={close}/>
+					</div>
+					
 					{#if centerOptions}
 					<div class="optionsScroller overflow-auto flex flex-col items-center space-y-1">
 						{#each options as option}
@@ -89,7 +96,7 @@
 		text-transform: uppercase;
 	}
 	.optionPopup {
-		z-index: 1;
+		z-index: 100;
 		border-radius: 10px;
 		position: fixed;
 		width: 320px;
@@ -101,14 +108,24 @@
 		background-color: var(--color-accent-light);
 	}
 	.optionsScroller {
+		z-index: 101;
 		width: 300px;
 		height: 160px;
 		padding: 10px;
 		margin-left: 10px;
 	}
 	.optionLabel {
+		z-index: 101;
 		font-size: 1.0em;
 		margin-left: 4px;
 		margin-top: 4px;
+	}
+	.closeButton {
+		z-index: 101;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin-top: -95px;
+		margin-left: 123px;
 	}
 </style>

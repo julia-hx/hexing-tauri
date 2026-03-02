@@ -19,12 +19,18 @@ export class FilePath {
 }
 
 export class OptionDialogState {
-	isActive:boolean;
+	activeDialogId:string;
 	closeActiveDialog:Function;
 
 	constructor()
 	{
-		this.isActive = false;
+		this.activeDialogId = "NONE";
+		this.closeActiveDialog = () => {};
+	}
+
+	reset(): void {
+		this.closeActiveDialog();
+		this.activeDialogId = "NONE";
 		this.closeActiveDialog = () => {};
 	}
 }

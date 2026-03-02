@@ -114,7 +114,8 @@
 	<div class="mt-2 flex flex-col items-center">
 		<p>OptionDialog consists of a button that opens a list of configured options:</p>
 		<div class="mt-2 flex flex-row">
-			<OptionsDialog 
+			<OptionsDialog
+				id="usage-examples-options"
 				label="options" 
 				optionState={exampleOptionState}
 				options={exampleOptions}
@@ -129,6 +130,7 @@
 		<p class="mt-1">Another one with simpler config:</p>
 		<div class="mt-0 flex flex-row">
 			<OptionsDialog 
+				id="usage-examples-options-simple"
 				label="simple options" 
 				optionState={exampleOptionStateSimple }
 				options={exampleOptionsSimple}
