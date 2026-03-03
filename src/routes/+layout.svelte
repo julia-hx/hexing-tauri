@@ -20,8 +20,6 @@
 		<div class="header bg-gray-100 dark:bg-gray-900 pb-1 mb-2">
 			<Header/>
 		</div>
-		
-
 		<div class="grow">
 			{@render children()}
 		</div>

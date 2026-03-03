@@ -84,6 +84,7 @@ export enum IconType {
 	Star,
 	Trash,
 	Fire,
+	Window
 }
 
 export enum AccentColor {

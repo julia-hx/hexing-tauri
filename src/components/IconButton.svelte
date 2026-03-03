@@ -12,8 +12,8 @@
 </button>
 
 <style>
-	.nudge-icon {
-	margin-left: -6px;
-	margin-top: -2px;
+.nudge-icon {
+	margin-left: -4px;
+	margin-top: 0px;
 }
 </style>

@@ -7,6 +7,9 @@
 	import FileDialog from "../../components/FileDialog.svelte";
 	import OptionsDialog from "../../components/OptionsDialog.svelte";
 	import IconButton from "../../components/IconButton.svelte";
+	import Dialog from "../../elements/Dialog.svelte";
+
+	let exampleDialogSize = $state("md");
 
 	let exampleFolderPath = $state({path: "-none-"});
 	let exampleFilePath = $state({path: "-none-"});
@@ -117,6 +120,31 @@
 		<p><span class="font-bold">FileDialog</span> gets paths to files or folder contents on the system:</p>
 		<div class="mt-2">
 			<FileDialog label="file dialog"/>
+		</div>
+	</div>
+
+	<div class="text-xl font-sans mt-6">
+		dialogs
+	</div>
+
+	<div class="mt-2 flex flex-col items-center">
+		<p>The generic <span class="font-bold">Dialog</span> element can contain anything:</p>
+		<div class="mt-2 flex flex-row">
+			<Dialog id="example-dialog" 
+				label="dialog" 
+				icon={IconType.Window} 
+				size="{exampleDialogSize}">
+
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore vel unde autem quia? Aperiam quam ipsum tenetur libero corrupti accusamus ipsa rerum, nisi, incidunt consequatur nesciunt. Dignissimos veritatis odio doloribus a adipisci eos aspernatur minima vero! Ut officia vitae tenetur. In non eveniet recusandae quisquam earum architecto? Repudiandae laboriosam quam quidem doloribus et magnam eaque aliquam asperiores dolor nobis, aperiam quas iste voluptates corrupti, rerum inventore est. Ducimus odit ex dicta asperiores delectus totam accusamus exercitationem? Corporis, dolore ratione! Ipsam, blanditiis perspiciatis. Laboriosam at expedita culpa, doloremque, hic veritatis autem magni esse cumque necessitatibus voluptates harum natus ut provident aliquid.</p>
+
+			</Dialog>
+		</div>
+		<p>Apply dialog sizes:</p>
+		<div class="flex flex-row items-center space-x-2">
+			<button onclick={()=>{exampleDialogSize="sm"}}>SM</button>
+			<button onclick={()=>{exampleDialogSize="md"}}>MD</button>
+			<button onclick={()=>{exampleDialogSize="lg"}}>LG</button>
+			<button onclick={()=>{exampleDialogSize="xl"}}>XL</button>
 		</div>
 	</div>
 

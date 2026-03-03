@@ -84,7 +84,7 @@
 }
 
 textarea, input, button, a { outline: 0px; }
-button, input {
+input {
 	border-radius: 8px;
 	padding-top: 4px;
 	padding-bottom: 2px;
@@ -92,6 +92,10 @@ button, input {
 	padding-right: 8px;
 }
 button {
+	border-radius: 8px;
+	padding: 2px;
+	padding-left: 6px;
+	padding-right: 6px;
 	background-color: var(--color-accent);
 }
 button:hover {
