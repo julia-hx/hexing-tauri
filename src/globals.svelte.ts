@@ -63,6 +63,7 @@ export enum IconType {
 	ArrowUp,
 	ArrowDown,
 	ArrowPath,
+	ArrowTopRightOnSquare,
 	BarsThree,
 	Heart,
 	Sparkles,

@@ -87,7 +87,7 @@
 	</div>
 
 	<div class="text-xl font-sans mt-6">
-		pickers
+		files and folders
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
@@ -132,35 +132,37 @@
 		<div class="mt-2 flex flex-row">
 			<Dialog id="example-dialog" 
 				label="dialog" 
-				icon={IconType.Window} 
-				size="{exampleDialogSize}">
+				icon={IconType.ArrowTopRightOnSquare} 
+				size={exampleDialogSize}>
+
+				<p>Apply dialog sizes:</p>
+				<div class="flex flex-row items-center space-x-2 md-2">
+					<button onclick={()=>{exampleDialogSize="sm"}}>SM</button>
+					<button onclick={()=>{exampleDialogSize="md"}}>MD</button>
+					<button onclick={()=>{exampleDialogSize="lg"}}>LG</button>
+					<button onclick={()=>{exampleDialogSize="xl"}}>XL</button>
+				</div>
 
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore vel unde autem quia? Aperiam quam ipsum tenetur libero corrupti accusamus ipsa rerum, nisi, incidunt consequatur nesciunt. Dignissimos veritatis odio doloribus a adipisci eos aspernatur minima vero! Ut officia vitae tenetur. In non eveniet recusandae quisquam earum architecto? Repudiandae laboriosam quam quidem doloribus et magnam eaque aliquam asperiores dolor nobis, aperiam quas iste voluptates corrupti, rerum inventore est. Ducimus odit ex dicta asperiores delectus totam accusamus exercitationem? Corporis, dolore ratione! Ipsam, blanditiis perspiciatis. Laboriosam at expedita culpa, doloremque, hic veritatis autem magni esse cumque necessitatibus voluptates harum natus ut provident aliquid.</p>
 
 			</Dialog>
 		</div>
-		<p>Apply dialog sizes:</p>
-		<div class="flex flex-row items-center space-x-2">
-			<button onclick={()=>{exampleDialogSize="sm"}}>SM</button>
-			<button onclick={()=>{exampleDialogSize="md"}}>MD</button>
-			<button onclick={()=>{exampleDialogSize="lg"}}>LG</button>
-			<button onclick={()=>{exampleDialogSize="xl"}}>XL</button>
-		</div>
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
-		<p><span class="font-bold">OptionDialog</span> consists of a button that opens a list of configured options:</p>
+		<p><span class="font-bold">OptionDialog</span> is a specialized Dialog for setting a state variable from a set of options:</p>
 		<div class="mt-2 flex flex-row">
 			<OptionsDialog
 				id="usage-examples-options"
-				label="options" 
+				label="options"
+				size="xl"
 				optionState={exampleOptionState}
 				options={exampleOptions}
 				onOptionStateChanged = {() => {
 					// no-op in this example
 				}}
 			 />
-			 <div class="display mt-0 ml-1">
+			 <div class="display ml-1">
 				<span>{exampleOptionState.value}</span>
 			 </div>
 		</div>

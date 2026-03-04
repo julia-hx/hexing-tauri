@@ -1,41 +1,28 @@
 <script lang="ts">
 	import IconButton from "./IconButton.svelte";
+	import Dialog from "./Dialog.svelte";
 	import { IconType, OptionConfig, OptionDialogState, optionDialogState } from "../globals.svelte";
 
 	// $state({value: "..."}) state object, event, options string array, label
 	let {
 		id = "OptionsDialog",
+		size = "md",
+		icon = IconType.BarsThree,
+		label = "Options",
 		optionState,
 		onOptionStateChanged,
-		label = "Options",
 		options = [new OptionConfig("-none-")],
 		centerOptions = false
 	} = $props();
-
-	let optionsContainer: HTMLElement;
-
-	function selectOption(value = "-none-") {
-		optionState.value = value;
-		onOptionStateChanged();
-		close();
-	}
-
-	function showOptions() {
-		if(optionDialogState.activeDialogId != id)
-		{
-			optionDialogState.closeActiveDialog();
-		}
-		optionDialogState.activeDialogId = id;
-		optionDialogState.closeActiveDialog = () => { close(); }
-		optionsContainer.hidden = false;
-	}
-
-	function close() {
-		optionsContainer.hidden = true;
-		optionDialogState.closeActiveDialog = () => {};
-	}
 </script>
 
+<div>
+	<Dialog id={id} label={label} size={size} icon={icon}>
+		div wip
+	</Dialog>
+</div>
+
+<!--
 <div class="flex justify-center items-center flex-col">
 	<div class="flex flex-row items-center">
 		<IconButton iconType={IconType.BarsThree} onClick={showOptions} />
@@ -90,6 +77,7 @@
 		</div>
 	</div>
 </div>
+-->
 
 <style>
 	.optionsLabel {
