@@ -10,7 +10,9 @@
 		size = "md",
 		noButton=false,
 		labeledButton=false,
-		icon=IconType.ArrowTopRightOnSquare
+		icon=IconType.ArrowTopRightOnSquare,
+		onShow = ()=>{},
+		onHide = ()=>{}
 	} = $props();
 
 	let showButton : HTMLElement;
@@ -27,12 +29,14 @@
 			dialogState.hideActiveDialog();
 		}
 		dialogState.activeDialogId = id;
-		dialogState.hideActiveDialog = () => { hide(); }	
+		dialogState.hideActiveDialog = () => { hide(); }
+		onShow();	
 	}
 	export function hide() {
 		showButton.hidden = false;
 		hideButton.hidden = true;
 		dialogContainer.hidden = true;
+		onHide();
 	}
 </script>
 

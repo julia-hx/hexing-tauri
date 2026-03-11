@@ -15,7 +15,7 @@
 		optionState,
 		onOptionStateChanged = () => {},
 		options = [new OptionConfig("-none-")],
-		orientation = "left",
+		centered = false
 	} = $props();
 
 	function selectOption(value: String) {
@@ -27,7 +27,7 @@
 
 <div>
 	<Dialog {id} {label} {size} {icon}>
-		{#if orientation === "center"}
+		{#if centered}
 		<div class="flex flex-col items-center space-y-1 mt-2">
 			{#each options as option}
 				<div class="flex flex-row">
@@ -45,7 +45,7 @@
 			{/each}
 		</div>
 		{/if}
-		{#if orientation === "left"}
+		{#if !centered}
 		<div class="flex flex-col items-left space-y-1 mt-2">
 			{#each options as option}
 				<div class="inline">

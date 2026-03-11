@@ -20,10 +20,16 @@
 		new OptionConfig("Pears"),
 		new OptionConfig("Physalis", "too good", true),
 		new OptionConfig("Strawberries", "sweet berries", true),
-		new OptionConfig("Mango", "this is the fruit that has the uv-map color gradient", true)
+		new OptionConfig("Mango", "fruit with a nice color gradient", true)
 	];
 	let exampleOptionStateSimple = $state({value: "-none-"});
 	let exampleOptionsSimple = [
+		new OptionConfig("ok"),
+		new OptionConfig("no thanks!"),
+		new OptionConfig("huh?")
+	]
+	let exampleOptionStatePile = $state({value: "-none-"});
+	let exampleOptionsPile = [
 		new OptionConfig("ok"),
 		new OptionConfig("no thanks!"),
 		new OptionConfig("huh?")
@@ -135,13 +141,13 @@
 				icon={IconType.ArrowTopRightOnSquare} 
 				size={exampleDialogSize}>
 
-				<p>Apply dialog sizes:</p>
-				<div class="flex flex-row items-center space-x-2 md-2">
-					<button onclick={()=>{exampleDialogSize="xs"}}>SM</button>
-					<button onclick={()=>{exampleDialogSize="sm"}}>SM</button>
-					<button onclick={()=>{exampleDialogSize="md"}}>MD</button>
-					<button onclick={()=>{exampleDialogSize="lg"}}>LG</button>
-					<button onclick={()=>{exampleDialogSize="xl"}}>XL</button>
+				<p>Apply some dialog sizes:</p>
+				<div class="flex flex-col justify-center items-center">
+					<div class="flex flex-row items-center space-x-2 md-2">
+						<button onclick={()=>{exampleDialogSize="sm"}}>SM</button>
+						<button onclick={()=>{exampleDialogSize="md"}}>MD</button>
+						<button onclick={()=>{exampleDialogSize="lg"}}>LG</button>
+					</div>
 				</div>
 
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore vel unde autem quia? Aperiam quam ipsum tenetur libero corrupti accusamus ipsa rerum, nisi, incidunt consequatur nesciunt. Dignissimos veritatis odio doloribus a adipisci eos aspernatur minima vero! Ut officia vitae tenetur. In non eveniet recusandae quisquam earum architecto? Repudiandae laboriosam quam quidem doloribus et magnam eaque aliquam asperiores dolor nobis, aperiam quas iste voluptates corrupti, rerum inventore est. Ducimus odit ex dicta asperiores delectus totam accusamus exercitationem? Corporis, dolore ratione! Ipsam, blanditiis perspiciatis. Laboriosam at expedita culpa, doloremque, hic veritatis autem magni esse cumque necessitatibus voluptates harum natus ut provident aliquid.</p>
@@ -171,7 +177,7 @@
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
-		<p>Dialog buttons can be set to display the dialogs label.</p>
+		<p>Dialog buttons can be set to display the dialog label.</p>
 		<div class="mt-2 flex flex-row space-x-2">
 			<Dialog id="dialog-labeled" labeledButton={true} size="sm" label="LABELED">
 				<div class="flex flex-col justify-center items-center mt-16">
@@ -197,18 +203,18 @@
 				{exampleOptionState.value}
 			</span>
 		</div>
-		<p>Default options orientation is "left".</p>
+		<p class="mt-2">Default options orientation is "left".</p>
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
-		<p>A simpler options config in size xs, with orientation set to "center":</p>
+		<p>A simpler options config in size xs, with "centered" property set to true:</p>
 		<div class="mt-2 flex flex-row space-x-2">
 			<OptionsDialog id="options-simple"
 				optionState={exampleOptionStateSimple}
 				options={exampleOptionsSimple}
 				label="choice?"
 				size="xs"
-				orientation="center"
+				centered={true}
 			/>
 			<span class="display">
 				{exampleOptionStateSimple.value}
