@@ -1,11 +1,28 @@
 use std::fs;
 
+#[cfg_attr(mobile, tauri::mobile_entry_point)]
+pub fn run() {
+    tauri::Builder::default()
+        .plugin(tauri_plugin_os::init())
+        .plugin(tauri_plugin_dialog::init())
+        .plugin(tauri_plugin_store::Builder::new().build())
+        .plugin(tauri_plugin_opener::init())
+        .invoke_handler(tauri::generate_handler![
+			greet, 
+			print_message,
+			get_folder_contents,
+			create_window
+		])
+        .run(tauri::generate_context!())
+        .expect("error while running tauri application");
+}
+
+// Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 #[tauri::command]
 fn print_message(message: &str) {
     println!("{}", &message);
 }
 
-// Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 #[tauri::command]
 fn greet(name: &str) -> String {
     format!("Hello, {}! You've been greeted from Rust!", name)
@@ -23,18 +40,12 @@ fn get_folder_contents(folder_path: &str) -> Vec<String> {
 	return result;
 }
 
-#[cfg_attr(mobile, tauri::mobile_entry_point)]
-pub fn run() {
-    tauri::Builder::default()
-        .plugin(tauri_plugin_os::init())
-        .plugin(tauri_plugin_dialog::init())
-        .plugin(tauri_plugin_store::Builder::new().build())
-        .plugin(tauri_plugin_opener::init())
-        .invoke_handler(tauri::generate_handler![
-			greet, 
-			print_message,
-			get_folder_contents,
-		])
-        .run(tauri::generate_context!())
-        .expect("error while running tauri application");
+#[tauri::command]
+async fn create_window(app: tauri::AppHandle) {
+  	let _webview_window = tauri::WebviewWindowBuilder::new(
+		&app, "window",
+		tauri::WebviewUrl::App("./examples".into())
+	)
+    .build()
+    .unwrap();
 }

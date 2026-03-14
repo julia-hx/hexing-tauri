@@ -8,6 +8,7 @@
 	import OptionsDialog from "../../components/OptionsDialog.svelte";
 	import IconButton from "../../components/IconButton.svelte";
 	import Dialog from "../../components/Dialog.svelte";
+	import Window from "../../components/Window.svelte";
 
 	let exampleDialogSize = $state("md");
 
@@ -219,6 +220,19 @@
 			<span class="display">
 				{exampleOptionStateSimple.value}
 			</span>
+		</div>
+	</div>
+
+	<div class="text-xl font-sans mt-6">
+		windows
+	</div>
+
+	<div class="mt-2 flex flex-col items-center">
+		<p>The <span class="font-bold">Dialog</span> component can contain anything:</p>
+		<div class="mt-2 flex flex-row">
+			<Window>
+				
+			</Window>
 		</div>
 	</div>
 </div>
