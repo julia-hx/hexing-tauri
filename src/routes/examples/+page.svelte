@@ -133,7 +133,7 @@
 	</div>
 
 	<div class="text-xl font-sans mt-6">
-		dialogs
+		dialog
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
@@ -191,11 +191,11 @@
 	</div>
 
 	<div class="text-xl font-sans mt-6">
-		options dialogs
+		options dialog
 	</div>
 
 	<div class="mt-2 flex flex-col justify-center items-center">
-		<p>The <span class="font-bold">OptionsDialog</span> is a specialized dialog component for setting a state value from a set of configured options:</p>
+		<p>The <span class="font-bold">OptionsDialog</span> is a specialized dialog component:</p>
 		<div class="mt-2 flex flex-row space-x-2">
 			<OptionsDialog id="example-options-dialog"
 				optionState={exampleOptionState}
@@ -209,8 +209,8 @@
 	</div>
 
 	<div class="mt-2 flex flex-col justify-center items-center">
-		<p>A simpler options config in size xs, with "centered" and "labeledButton" set to true:</p>
-		<div class="mt-2 flex flex-row space-x-2">
+		<p>A simpler options config:</p>
+		<div class="mt-1 flex flex-row space-x-2">
 			<OptionsDialog id="options-simple"
 				optionState={exampleOptionStateSimple}
 				options={exampleOptionsSimple}
@@ -228,7 +228,7 @@
 	</div>
 
 	<div class="text-xl font-sans mt-6">
-		toggles
+		toggle
 	</div>
 
 	<div class="mt-2 flex flex-col justify-center items-center">
