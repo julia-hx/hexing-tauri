@@ -1,5 +1,4 @@
 <script lang="ts">
-	import IconButton from "./IconButton.svelte";
 	import Dialog from "./Dialog.svelte";
 	import {
 		IconType,

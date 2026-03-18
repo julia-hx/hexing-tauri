@@ -29,12 +29,12 @@
 	<button id="uimode-toggle" onclick={toggleDarkMode}>
 		<div id="uimode-icon">
 			<div bind:this={sunIcon}>
-				<Icon type={IconType.Sun} offset="-4" size="32"/>
+				<Icon type={IconType.Sun}/>
 			</div>
 		</div>
 		<div id="uimode-icon">
 			<div bind:this={moonIcon}>
-				<Icon type={IconType.Moon} offset="-4" size="32"/>
+				<Icon type={IconType.Moon}/>
 			</div>
 		</div>
 	</button>
@@ -43,12 +43,12 @@
 <style>
 	#uimode-toggle {
 		border-radius: 20px;
-		width: 24px;
-		height: 24px;
+		width: 26px;
+		height: 26px;
 		padding: 0px;
 	}
 
 	#uimode-icon {
-		margin: 0px;
+		margin-left: 1px;
 	}
 </style>

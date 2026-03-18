@@ -35,6 +35,8 @@
 		new OptionConfig("no thanks!"),
 		new OptionConfig("huh?")
 	]
+
+	let exampleToggleState = $state({value: false});
 </script>
 
 <div class="flex justify-center items-center flex-col space-y-0">
@@ -231,8 +233,17 @@
 
 	<div class="mt-2 flex flex-col justify-center items-center">
 		<p>The <span class="font-bold">Toggle</span> component is used to toggle a state between true or false:</p>
-		<div class="mt-2 flex flex-row space-x-2">
-			<Toggle/>
+		<div class="flex flex-row">
+			<div class="mt-2 flex flex-row space-x-2">
+				<Toggle toggleState={exampleToggleState}/>
+
+				{#if exampleToggleState.value}
+					<Icon type={IconType.FaceSmile}/>
+				{/if}
+				{#if !exampleToggleState.value}
+					<Icon type={IconType.FaceFrown}/>
+				{/if}
+			</div>
 		</div>
 	</div>
 </div>
