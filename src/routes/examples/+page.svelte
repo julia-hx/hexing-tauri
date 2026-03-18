@@ -10,6 +10,8 @@
 	import Dialog from "../../components/Dialog.svelte";
 	import Toggle from "../../components/Toggle.svelte";
 
+	let exampleIcon = $state({type: IconType.MusicalNote});
+
 	let exampleDialogSize = $state("md");
 
 	let exampleFolderPath = $state({path: "-none-"});
@@ -55,16 +57,16 @@
 		<div class="flex flex-row justify-center mt-2 space-x-1">
 			<Icon type={IconType.ArrowLeft}/>
 			<Icon type={IconType.Paintbrush}/>
+			<Icon type={exampleIcon.type}/>
 			<Icon type={IconType.Photo}/>
-			<Icon type={IconType.Heart}/>
 			<Icon type={IconType.CogEight}/>
 		</div>
 		<p class="mt-2">There is also an <span class="font-bold">Icon Button</span> component:</p>
 		<div class="flex flex-row justify-center mt-2 space-x-1">
 			<div class="flex flex-row justify-center mt-0 space-x-1">
-				<IconButton iconType={IconType.Heart} onClick={()=>{console.log("heart!")}}/>
-				<IconButton iconType={IconType.Sparkles} onClick={()=>{console.log("sparkles!")}}/>
-				<IconButton iconType={IconType.MusicalNote} onClick={()=>{console.log("music!")}}/>
+				<IconButton iconType={IconType.Heart} onClick={()=>{ exampleIcon.type = IconType.Heart }}/>
+				<IconButton iconType={IconType.Sparkles} onClick={()=>{ exampleIcon.type = IconType.Sparkles }}/>
+				<IconButton iconType={IconType.MusicalNote} onClick={()=>{ exampleIcon.type = IconType.MusicalNote }}/>
 			</div>
 		</div>
 	</div>
