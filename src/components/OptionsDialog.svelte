@@ -3,7 +3,7 @@
 	import {
 		IconType,
 		OptionConfig,
-	} from "../globals.svelte";
+	} from "../scripts/globals.svelte";
     import { dialogState } from "../scripts/dialogState.svelte";
 
 	let {

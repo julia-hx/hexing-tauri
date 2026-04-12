@@ -35,4 +35,4 @@ A settings page is included. By default it stores the users choice of accent col
 
 ## Components
 
-Go to *about > template usage examples* to get an overview of included components and elements, and how to use them.
+Check the *template usage examples* to get an overview of included components and elements, and how to use them.

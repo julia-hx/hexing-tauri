@@ -1,4 +1,4 @@
-import { setAccentColorByString, defaultFilePath, uiMode } from '../../globals.svelte';
+import { setAccentColorByString, defaultFilePath, uiMode } from '../../scripts/globals.svelte';
 import { LazyStore } from '@tauri-apps/plugin-store';
 import type { PageLoad } from './$types';
 

@@ -1,5 +1,5 @@
 export const uiMode = $state({ isDarkMode: true });
-import OptionsDialog from "./components/OptionsDialog.svelte";
+import OptionsDialog from "../components/OptionsDialog.svelte";
 
 export class FilePath {
 	value:string;
@@ -40,6 +40,8 @@ export enum IconType {
 	PlusCircle,
 	Sun,
 	Moon,
+	SunLightMode,
+	MoonDarkMode,
 	ArrowLeft,
 	ArrowRight,
 	ArrowUp,

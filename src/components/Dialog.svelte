@@ -1,7 +1,7 @@
 <script lang="ts">
 	import IconButton from "./IconButton.svelte";
 	import Icon from "./Icon.svelte";
-	import { IconType } from "../globals.svelte";
+	import { IconType } from "../scripts/globals.svelte";
 	import { dialogState } from "../scripts/dialogState.svelte";
 
 	let { 
@@ -44,7 +44,7 @@
 <div class="{size}">
 	<div hidden={noButton}>
 		<div bind:this={showButton} class="flex flex-row items-center" >
-			<IconButton iconType={icon} onClick={show}/>
+			<IconButton iconType={icon} onClick={show} title="show dialog"/>
 			{#if labeledButton}
 			<div class="label buttonLabel">
 				<span>{label}</span>
@@ -52,7 +52,7 @@
 			{/if}
 		</div>
 		<div bind:this={hideButton} hidden class="flex flex-row items-center">
-			<IconButton iconType={IconType.XMark} onClick={hide}/>
+			<IconButton iconType={IconType.XMark} onClick={hide} title="hide dialog"/>
 			{#if labeledButton}
 			<div class="label buttonLabel">
 				<span>{label}</span>
@@ -65,7 +65,7 @@
 		<div class="dialogHeader flex flex-row items-center">
 			<span class="dialogLabel">{label}</span>
 			<button class="dialogExitButton" onclick={()=>{hide()}}>
-				<Icon type={IconType.XMark} size=24 offset=0/>
+				<Icon type={IconType.XMark}/>
 			</button>
 		</div>
 		

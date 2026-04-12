@@ -1,5 +1,5 @@
 <script>
-	import { uiMode, IconType } from "../globals.svelte.js";
+	import { uiMode, IconType } from "../scripts/globals.svelte.js";
 	import Icon from "./Icon.svelte";
 	import { _storeDarkMode } from "../routes/settings/+page.js";
 
@@ -29,12 +29,12 @@
 	<button id="uimode-toggle" onclick={toggleDarkMode}>
 		<div id="uimode-icon">
 			<div bind:this={sunIcon}>
-				<Icon type={IconType.Sun}/>
+				<Icon type={IconType.SunLightMode}/>
 			</div>
 		</div>
 		<div id="uimode-icon">
 			<div bind:this={moonIcon}>
-				<Icon type={IconType.Moon}/>
+				<Icon type={IconType.MoonDarkMode}/>
 			</div>
 		</div>
 	</button>
@@ -43,12 +43,12 @@
 <style>
 	#uimode-toggle {
 		border-radius: 20px;
-		width: 26px;
-		height: 26px;
+		width: 24px;
+		height: 24px;
 		padding: 0px;
 	}
 
 	#uimode-icon {
-		margin-left: 1px;
+		margin: 0px;
 	}
 </style>

@@ -13,7 +13,7 @@
 
 <div class="flex flex-row">
 	<div class="toggle-background">
-		<button class="toggle-button bg-gray-300! dark:bg-gray-800!" title="toggle-btn" onclick={()=>{ toggle(); }}>
+		<button class="toggle-button bg-gray-300! dark:bg-gray-800!" title="toggle" onclick={()=>{ toggle(); }}>
 			{#if toggleState.value === true}
 				<div class="toggle toggle-on"></div>
 			{/if}

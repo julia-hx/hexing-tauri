@@ -1,8 +1,8 @@
 <script>
 	import IconButton from './IconButton.svelte';
-	import { IconType } from '../globals.svelte';
+	import { IconType } from '../scripts/globals.svelte';
 	import { open } from '@tauri-apps/plugin-dialog';
-	import { defaultFilePath } from '../globals.svelte';
+	import { defaultFilePath } from '../scripts/globals.svelte';
 
 	class OpenFolderOptions {
 		constructor() {
@@ -32,8 +32,8 @@
 
 <div class="flex justify-center items-center flex-col">
 	<div class="flex flex-row items-center">
-		<IconButton iconType={IconType.Folder} onClick={selectFolder}/>
-		<IconButton iconType={IconType.Trash} onClick={resetFolder}/>
+		<IconButton iconType={IconType.Folder} onClick={selectFolder} title="select folder"/>
+		<IconButton iconType={IconType.Trash} onClick={resetFolder} title="reset"/>
 		
 		<div class="truncate ml-1 pt-1 pl-2 pr-2 h-7 min-w-10 max-w-80 display">
 			<span>{pathState.path}</span>

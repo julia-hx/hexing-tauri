@@ -2,10 +2,10 @@
 	import Icon from "./Icon.svelte";
 
 	// IconType and event
-	let { iconType, onClick } = $props();
+	let { iconType, onClick, title="" } = $props();
 </script>
 
-<button class="size-7 ml-1" onclick={onClick}>
+<button class="size-7 ml-1" onclick={onClick} title={title}>
 	<div class="nudge-icon">
 		<Icon type={iconType}></Icon>
 	</div>

@@ -1,6 +1,7 @@
 <script>
 	import Icon from "../../components/Icon.svelte";
-	import { IconType, OptionConfig } from "../../globals.svelte";
+	import IconSmall from "../../components/IconSmall.svelte";
+	import { IconType, OptionConfig } from "../../scripts/globals.svelte";
 	import AccentColorPicker from "../../components/AccentColorPicker.svelte";
 	import FolderPicker from "../../components/FolderPicker.svelte";
 	import FilePicker from "../../components/FilePicker.svelte";
@@ -61,13 +62,21 @@
 			<Icon type={IconType.Photo}/>
 			<Icon type={IconType.CogEight}/>
 		</div>
-		<p class="mt-2">There is also an <span class="font-bold">Icon Button</span> component:</p>
+		<p class="mt-2">There is also an <span class="font-bold">Icon Button</span> component.</p>
 		<div class="flex flex-row justify-center mt-2 space-x-1">
 			<div class="flex flex-row justify-center mt-0 space-x-1">
-				<IconButton iconType={IconType.Heart} onClick={()=>{ exampleIcon.type = IconType.Heart }}/>
-				<IconButton iconType={IconType.Sparkles} onClick={()=>{ exampleIcon.type = IconType.Sparkles }}/>
-				<IconButton iconType={IconType.MusicalNote} onClick={()=>{ exampleIcon.type = IconType.MusicalNote }}/>
+				<IconButton iconType={IconType.Heart} onClick={()=>{ exampleIcon.type = IconType.Heart }} title="heart"/>
+				<IconButton iconType={IconType.Sparkles} onClick={()=>{ exampleIcon.type = IconType.Sparkles }} title="sparkles"/>
+				<IconButton iconType={IconType.MusicalNote} onClick={()=>{ exampleIcon.type = IconType.MusicalNote }} title="musical note"/>
 			</div>
+		</div>
+		<p class="mt-2">The <span class="font-bold">Icon Small</span> component draws the "Mini" Hero Icon versions.</p>
+		<div class="flex flex-row justify-center mt-2 space-x-1">
+			<IconSmall type={IconType.ArrowUp}/>
+			<IconSmall type={IconType.Star}/>
+			<IconSmall type={exampleIcon.type}/>
+			<IconSmall type={IconType.Fire}/>
+			<IconSmall type={IconType.Eye}/>
 		</div>
 	</div>
 
@@ -75,7 +84,7 @@
 		accent color
 	</div>
 	<div class="mt-2 flex flex-col justify-center items-center">
-		<p>Use the <span class="font-bold">AccentColorPicker</span> component from anywhere:</p>
+		<p>Use the <span class="font-bold">AccentColorPicker</span> component from anywhere.</p>
 		<AccentColorPicker/>
 		
 		<p class="mt-2">Elements can <span class="accent-light">use</span> <span class="accent">accent</span> <span class="accent-heavy">colors</span>,</p>
@@ -102,7 +111,7 @@
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
-		<p><span class="font-bold">FolderPicker</span> component gets a single folder path from the system:</p>
+		<p><span class="font-bold">FolderPicker</span> component gets a single folder path from the system.</p>
 		<div class="mt-2s">
 			<FolderPicker 
 				label="folder picker" 
@@ -115,7 +124,7 @@
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
-		<p><span class="font-bold">FilePicker</span> gets a single file path:</p>
+		<p><span class="font-bold">FilePicker</span> gets a single file path.</p>
 		<div class="mt-2s">
 			<FilePicker 
 				label="file picker" 
@@ -128,7 +137,7 @@
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
-		<p><span class="font-bold">FileDialog</span> gets paths to files or folder contents on the system:</p>
+		<p><span class="font-bold">FileDialog</span> gets paths to files or folder contents on the system.</p>
 		<div class="mt-2">
 			<FileDialog label="file dialog"/>
 		</div>
@@ -139,7 +148,7 @@
 	</div>
 
 	<div class="mt-2 flex flex-col items-center">
-		<p>The <span class="font-bold">Dialog</span> component can contain anything:</p>
+		<p>The <span class="font-bold">Dialog</span> component can contain anything.</p>
 		<div class="mt-2 flex flex-row">
 			<Dialog id="example-dialog" 
 				label="dialog" 
@@ -197,7 +206,7 @@
 	</div>
 
 	<div class="mt-2 flex flex-col justify-center items-center">
-		<p>The <span class="font-bold">OptionsDialog</span> is a specialized dialog component:</p>
+		<p>The <span class="font-bold">OptionsDialog</span> is a specialized dialog component.</p>
 		<div class="mt-2 flex flex-row space-x-2">
 			<OptionsDialog id="example-options-dialog"
 				optionState={exampleOptionState}
@@ -234,7 +243,7 @@
 	</div>
 
 	<div class="mt-2 flex flex-col justify-center items-center">
-		<p>The <span class="font-bold">Toggle</span> component is used to toggle a state between true or false:</p>
+		<p>The <span class="font-bold">Toggle</span> component is used to toggle a state between true or false.</p>
 		<div class="flex flex-row">
 			<div class="mt-2 flex flex-row space-x-2">
 				<Toggle toggleState={exampleToggleState}/>

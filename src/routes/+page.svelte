@@ -25,4 +25,8 @@
 		<input bind:value={message}/>
 		<button type="submit">Print</button>
 	</form>
+
+	<p class="mt-4">
+		<a class="color-accent font-bold" href="./examples">template usage examples</a>
+	</p>	
 </div>

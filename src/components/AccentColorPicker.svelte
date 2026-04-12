@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getAccentColorAsString, accentColor, AccentColor } from '../globals.svelte';
+	import { getAccentColorAsString, accentColor, AccentColor } from '../scripts/globals.svelte';
 	import { LazyStore } from '@tauri-apps/plugin-store';
 
 	async function _setAccentColor(color : AccentColor) {

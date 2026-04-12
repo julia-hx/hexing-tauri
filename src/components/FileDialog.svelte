@@ -1,6 +1,6 @@
 <script>
 	import IconButton from './IconButton.svelte';
-	import { defaultFilePath, IconType, FilePath } from '../globals.svelte';
+	import { defaultFilePath, IconType, FilePath } from '../scripts/globals.svelte';
 	import { open } from '@tauri-apps/plugin-dialog';
 	import { invoke } from '@tauri-apps/api/core';
 	
@@ -92,9 +92,9 @@
 </script>
 
 <div class="flex flex-row space-x-0">
-	<IconButton iconType={IconType.Document} onClick={selectSourceFile}/>
-	<IconButton iconType={IconType.Folder} onClick={selectSourceFolder}/>
-	<IconButton iconType={IconType.Trash} onClick={reset}/>
+	<IconButton iconType={IconType.Document} onClick={selectSourceFile} title="select files"/>
+	<IconButton iconType={IconType.Folder} onClick={selectSourceFolder} title="select folder contents"/>
+	<IconButton iconType={IconType.Trash} onClick={reset} title="reset"/>
 	{#if label.length > 0}
 	<div class="label no-margins">
 		{label}

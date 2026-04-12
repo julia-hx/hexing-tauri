@@ -2,7 +2,7 @@
 	import AccentColorPicker from '../../components/AccentColorPicker.svelte';
 	import FolderPicker from '../../components/FolderPicker.svelte';
 	import { _storeDefaultFilepath } from './+page';
-	import { defaultFilePath } from '../../globals.svelte';
+	import { defaultFilePath } from '../../scripts/globals.svelte';
 </script>
 
 <div class="flex justify-center items-center flex-col">

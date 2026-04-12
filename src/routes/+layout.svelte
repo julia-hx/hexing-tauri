@@ -1,7 +1,7 @@
 <script>
 	let { children } = $props();
 	import Header from "../components/Header.svelte";
-	import { uiMode, getAccentColorAsString} from "../globals.svelte";
+	import { uiMode, getAccentColorAsString} from "../scripts/globals.svelte";
 	import Footer from "../components/Footer.svelte";
 	import "../app.css"
 
