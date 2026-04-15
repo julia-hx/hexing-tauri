@@ -8,8 +8,10 @@
 	import FileDialog from "../../components/FileDialog.svelte";
 	import OptionsDialog from "../../components/OptionsDialog.svelte";
 	import IconButton from "../../components/IconButton.svelte";
+	import IconButtonSmall from "../../components/IconButtonSmall.svelte";
 	import Dialog from "../../components/Dialog.svelte";
 	import Toggle from "../../components/Toggle.svelte";
+	import ValueInput from "../../components/ValueInput.svelte";
 
 	let exampleIcon = $state({type: IconType.MusicalNote});
 
@@ -40,6 +42,10 @@
 	]
 
 	let exampleToggleState = $state({value: false});
+
+	let exampleTextState = $state({value: "text"});
+	let exampleIntState = $state({value: 123});
+	let exampleFloatState = $state({value: 1.23});
 </script>
 
 <div class="flex justify-center items-center flex-col space-y-0">
@@ -57,12 +63,12 @@
 		A selection of Tailwind Hero Icons are included, such as:
 		<div class="flex flex-row justify-center mt-2 space-x-1">
 			<Icon type={IconType.ArrowLeft}/>
-			<Icon type={IconType.Paintbrush}/>
+			<Icon type={IconType.Radio}/>
 			<Icon type={exampleIcon.type}/>
 			<Icon type={IconType.Photo}/>
 			<Icon type={IconType.CogEight}/>
 		</div>
-		<p class="mt-2">There is also an <span class="font-bold">Icon Button</span> component.</p>
+		<p class="mt-2">The <span class="font-bold">IconButton</span> component displays an Icon and calls an onClick function.</p>
 		<div class="flex flex-row justify-center mt-2 space-x-1">
 			<div class="flex flex-row justify-center mt-0 space-x-1">
 				<IconButton iconType={IconType.Heart} onClick={()=>{ exampleIcon.type = IconType.Heart }} title="heart"/>
@@ -70,13 +76,21 @@
 				<IconButton iconType={IconType.MusicalNote} onClick={()=>{ exampleIcon.type = IconType.MusicalNote }} title="musical note"/>
 			</div>
 		</div>
-		<p class="mt-2">The <span class="font-bold">Icon Small</span> component draws the "Mini" Hero Icon versions.</p>
+		<p class="mt-2">The <span class="font-bold">IconSmall</span> component draws the "Mini" Hero Icon versions.</p>
 		<div class="flex flex-row justify-center mt-2 space-x-1">
 			<IconSmall type={IconType.ArrowUp}/>
 			<IconSmall type={IconType.Star}/>
 			<IconSmall type={exampleIcon.type}/>
 			<IconSmall type={IconType.Fire}/>
 			<IconSmall type={IconType.Eye}/>
+		</div>
+		<p class="mt-2">There is also an <span class="font-bold">IconButtonSmall</span> component.</p>
+		<div class="flex flex-row justify-center mt-2 space-x-1">
+			<div class="flex flex-row justify-center mt-0 space-x-1">
+				<IconButtonSmall iconType={IconType.ExclamationTriangle} onClick={()=>{ exampleIcon.type = IconType.ExclamationTriangle }} title="heart"/>
+				<IconButtonSmall iconType={IconType.Paintbrush} onClick={()=>{ exampleIcon.type = IconType.Paintbrush }} title="sparkles"/>
+				<IconButtonSmall iconType={IconType.CommandLine} onClick={()=>{ exampleIcon.type = IconType.CommandLine }} title="musical note"/>
+			</div>
 		</div>
 	</div>
 
@@ -257,6 +271,19 @@
 				{/if}
 			</div>
 		</div>
+	</div>
+
+	<div class="text-xl font-sans mt-6">
+		value inputs
+	</div>
+
+	<div class="mt-2 flex flex-col justify-center items-center">
+		<p>Use the <span class="font-bold">ValueInput</span> component to input and store strings or numbers.</p>
+		<div class="flex flex-row">
+			<ValueInput valueState={exampleTextState} />
+		</div>
+		<p>{exampleTextState.value}</p>
+		
 	</div>
 </div>
 

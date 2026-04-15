@@ -87,6 +87,12 @@ export enum AccentColor {
 	Gray
 }
 
+export enum ValueType {
+	String,
+	Int,
+	Float
+}
+
 export const accentColor = $state({ color: AccentColor.Violet })
 
 export function getAccentColorAsString(): string {

@@ -1,12 +1,12 @@
 <script>
-	import Icon from "./Icon.svelte";
+	import IconSmall from "./IconSmall.svelte";
 
 	let { iconType, onClick, title="" } = $props();
 </script>
 
-<button class="size-7 ml-1" onclick={onClick} title={title}>
+<button class="size-6 ml-1 rounded-none" onclick={onClick} title={title}>
 	<div class="nudge-icon">
-		<Icon type={iconType}></Icon>
+		<IconSmall type={iconType}></IconSmall>
 	</div>
 </button>
 

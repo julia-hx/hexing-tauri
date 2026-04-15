@@ -1,6 +1,6 @@
 <script lang="ts">
 	import IconButton from "./IconButton.svelte";
-	import Icon from "./Icon.svelte";
+	import IconSmall from "./IconSmall.svelte";
 	import { IconType } from "../scripts/globals.svelte";
 	import { dialogState } from "../scripts/dialogState.svelte";
 
@@ -65,7 +65,7 @@
 		<div class="dialogHeader flex flex-row items-center">
 			<span class="dialogLabel">{label}</span>
 			<button class="dialogExitButton" onclick={()=>{hide()}}>
-				<Icon type={IconType.XMark}/>
+				<IconSmall type={IconType.XMark}/>
 			</button>
 		</div>
 		
