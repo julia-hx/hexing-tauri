@@ -11,7 +11,7 @@
 	import IconButtonSmall from "../../components/IconButtonSmall.svelte";
 	import Dialog from "../../components/Dialog.svelte";
 	import Toggle from "../../components/Toggle.svelte";
-	import ValueInput from "../../components/ValueInput.svelte";
+	import TextInput from "../../components/TextInput.svelte";
 
 	let exampleIcon = $state({type: IconType.MusicalNote});
 
@@ -278,9 +278,9 @@
 	</div>
 
 	<div class="mt-2 flex flex-col justify-center items-center">
-		<p>Use the <span class="font-bold">ValueInput</span> component to input and store strings or numbers.</p>
+		<p>Use the <span class="font-bold">TextInput</span> component to input and store a short string.</p>
 		<div class="flex flex-row">
-			<ValueInput valueState={exampleTextState} />
+			<TextInput valueState={exampleTextState} />
 		</div>
 		<p>{exampleTextState.value}</p>
 		
