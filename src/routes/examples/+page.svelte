@@ -278,7 +278,7 @@
 	</div>
 
 	<div class="mt-2 flex flex-col justify-center items-center">
-		<p>Use the <span class="font-bold">TextInput</span> component to input and store a short string.</p>
+		<p>Use the <span class="font-bold">TextInput</span> component to input and store a string.</p>
 		<div class="flex flex-row">
 			<TextInput valueState={exampleTextState} />
 		</div>
